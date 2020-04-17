@@ -28,8 +28,8 @@ ecbuild_requires_macro_version( 2.7 )
 ecbuild_bundle( PROJECT fckit GIT "https://github.com/JCSDA/fckit.git" BRANCH develop )
 
 ecbuild_bundle( PROJECT atlas GIT "https://github.com/JCSDA/atlas.git"      BRANCH develop  UPDATE )
-ecbuild_bundle( PROJECT saber GIT "https://github.com/JCSDA/saber.git"      BRANCH develop  UPDATE )
 ecbuild_bundle( PROJECT oops GIT "https://github.com/JCSDA/oops.git"        BRANCH develop  UPDATE )
+ecbuild_bundle( PROJECT saber GIT "https://github.com/JCSDA/saber.git"      BRANCH develop  UPDATE )
 ecbuild_bundle( PROJECT ioda GIT "https://github.com/JCSDA/ioda.git"        BRANCH develop  UPDATE )
 
 # Build Doxygen documentation
