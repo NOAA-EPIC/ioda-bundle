@@ -24,16 +24,20 @@ ecbuild_requires_macro_version( 2.7 )
 #                    DEFAULT ON
 #                    DESCRIPTION "Use OpenMP" )
 
-#ecbuild_bundle( PROJECT eckit GIT "https://github.com/JCSDA/eckit.git" TAG 1.4.0.jcsda1 )
-ecbuild_bundle( PROJECT fckit GIT "https://github.com/JCSDA/fckit.git" BRANCH develop )
+find_package(eckit)
+if(NOT eckit_FOUND)
+	ecbuild_bundle( PROJECT eckit GIT "https://github.com/JCSDA/eckit.git" release-stable UPDATE )
+endif()
 
-ecbuild_bundle( PROJECT atlas GIT "https://github.com/JCSDA/atlas.git"      BRANCH develop  UPDATE )
+ecbuild_bundle( PROJECT fckit GIT "https://github.com/JCSDA/fckit.git" BRANCH release-stable  UPDATE )
+ecbuild_bundle( PROJECT atlas GIT "https://github.com/JCSDA/atlas.git"      BRANCH release-stable  UPDATE )
+
 ecbuild_bundle( PROJECT oops GIT "https://github.com/JCSDA/oops.git"        BRANCH develop  UPDATE )
 ecbuild_bundle( PROJECT saber GIT "https://github.com/JCSDA/saber.git"      BRANCH develop  UPDATE )
 ecbuild_bundle( PROJECT ioda GIT "https://github.com/JCSDA/ioda.git"        BRANCH develop  UPDATE )
 
 # Build Doxygen documentation
-option(BUILD_UFO_BUNDLE_DOC "Build documentation" ON)
+option(BUILD_UFO_BUNDLE_DOC "Build documentation" OFF)
 if(BUILD_UFO_BUNDLE_DOC)
    add_subdirectory( Documentation )
 endif(BUILD_UFO_BUNDLE_DOC)
