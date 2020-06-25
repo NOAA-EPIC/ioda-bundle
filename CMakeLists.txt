@@ -30,11 +30,10 @@ if(NOT eckit_FOUND)
 endif()
 
 ecbuild_bundle( PROJECT fckit GIT "https://github.com/JCSDA/fckit.git" BRANCH release-stable  UPDATE )
-ecbuild_bundle( PROJECT atlas GIT "https://github.com/JCSDA/atlas.git"      BRANCH release-stable  UPDATE )
+ecbuild_bundle( PROJECT atlas GIT "https://github.com/JCSDA/atlas.git" BRANCH release-stable  UPDATE )
 
-ecbuild_bundle( PROJECT oops GIT "https://github.com/JCSDA/oops.git"        BRANCH develop  UPDATE )
-ecbuild_bundle( PROJECT saber GIT "https://github.com/JCSDA/saber.git"      BRANCH develop  UPDATE )
-ecbuild_bundle( PROJECT ioda GIT "https://github.com/JCSDA/ioda.git"        BRANCH develop  UPDATE )
+ecbuild_bundle( PROJECT oops GIT "https://github.com/JCSDA/oops.git"   BRANCH develop  UPDATE )
+ecbuild_bundle( PROJECT ioda GIT "https://github.com/JCSDA/ioda.git"   BRANCH develop  UPDATE )
 
 # Build Doxygen documentation
 option(BUILD_UFO_BUNDLE_DOC "Build documentation" OFF)
@@ -44,5 +43,5 @@ endif(BUILD_UFO_BUNDLE_DOC)
 
 ecbuild_bundle_finalize()
 
-configure_file("CTestCustom.ctest.in" ${CMAKE_BINARY_DIR}/CTestCustom.ctest)
-
+include(cmake/cdash-integration.cmake)
+include(CTest)
