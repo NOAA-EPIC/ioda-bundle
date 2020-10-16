@@ -26,14 +26,14 @@ ecbuild_requires_macro_version( 2.7 )
 
 find_package(eckit)
 if(NOT eckit_FOUND)
-	ecbuild_bundle( PROJECT eckit GIT "https://github.com/JCSDA/eckit.git" BRANCH release-stable UPDATE )
+	ecbuild_bundle( PROJECT eckit GIT "https://github.com/JCSDA-internal/eckit.git" BRANCH release-stable UPDATE )
 endif()
 
-ecbuild_bundle( PROJECT fckit GIT "https://github.com/JCSDA/fckit.git" BRANCH release-stable  UPDATE )
-ecbuild_bundle( PROJECT atlas GIT "https://github.com/JCSDA/atlas.git" BRANCH release-stable  UPDATE )
+ecbuild_bundle( PROJECT fckit GIT "https://github.com/JCSDA-internal/fckit.git" BRANCH release-stable  UPDATE )
+ecbuild_bundle( PROJECT atlas GIT "https://github.com/JCSDA-internal/atlas.git" BRANCH release-stable  UPDATE )
 
-ecbuild_bundle( PROJECT oops GIT "https://github.com/JCSDA/oops.git"   BRANCH develop  UPDATE )
-ecbuild_bundle( PROJECT ioda GIT "https://github.com/JCSDA/ioda.git"   BRANCH develop  UPDATE )
+ecbuild_bundle( PROJECT oops GIT "https://github.com/JCSDA-internal/oops.git"   BRANCH develop  UPDATE )
+ecbuild_bundle( PROJECT ioda GIT "https://github.com/JCSDA-internal/ioda.git"   BRANCH develop  UPDATE )
 
 # Build Doxygen documentation
 option(BUILD_UFO_BUNDLE_DOC "Build documentation" OFF)
