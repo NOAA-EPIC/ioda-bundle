@@ -24,6 +24,8 @@ ecbuild_requires_macro_version( 2.7 )
 #                    DEFAULT ON
 #                    DESCRIPTION "Use OpenMP" )
 
+ecbuild_bundle( PROJECT jedicmake GIT "https://github.com/JCSDA-internal/jedi-cmake.git" BRANCH develop UPDATE )
+
 find_package(eckit)
 if(NOT eckit_FOUND)
 	ecbuild_bundle( PROJECT eckit GIT "https://github.com/JCSDA-internal/eckit.git" BRANCH release-stable UPDATE )
