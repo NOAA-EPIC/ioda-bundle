@@ -1,9 +1,7 @@
 # Ignore these files anywhere in the tree
-*.o
-*.a
+*.[aox]
 *.so
 *.mod
-*.x
 *.pyc
 *.v3breakpoints
 *.swp
@@ -14,9 +12,12 @@
 jedicmake/
 eckit/
 fckit/
-ioda/
-oops/
 atlas/
-saber/
+oops/
+ioda?engines/
+ioda/
+ioda?converters/
+iodaconv/
 
 build/
+install/
