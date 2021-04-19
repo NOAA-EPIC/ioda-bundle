@@ -7,9 +7,9 @@
 # IODA bundle
 #
 
-project( ioda-bundle C CXX Fortran )
+cmake_minimum_required( VERSION 3.12 FATAL_ERROR )
 
-cmake_minimum_required( VERSION 3.3.2 FATAL_ERROR )
+project( ioda-bundle VERSION 1.0.0 LANGUAGES C CXX Fortran )
 
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
@@ -18,8 +18,6 @@ include( ecbuild_bundle )
 set( ENABLE_MPI ON CACHE BOOL "Compile with MPI" )
 
 ecbuild_bundle_initialize()
-
-ecbuild_requires_macro_version( 2.7 )
 
 ecbuild_bundle( PROJECT jedicmake GIT "https://github.com/JCSDA-internal/jedi-cmake.git" BRANCH develop UPDATE )
 
