@@ -18,6 +18,8 @@ ioda?engines/
 ioda/
 ioda?converters/
 iodaconv/
+ioda?data/
+test?data?release/
 
 build/
 install/
