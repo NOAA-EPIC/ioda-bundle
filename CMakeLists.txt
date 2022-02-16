@@ -13,6 +13,7 @@ project( ioda-bundle VERSION 1.0.0 LANGUAGES C CXX Fortran )
 
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
+find_package( ecbuild REQUIRED )
 include( ecbuild_bundle )
 
 set( ENABLE_MPI ON CACHE BOOL "Compile with MPI" )
