@@ -41,11 +41,49 @@ By default, the ioda-converters portion of ioda-bundle is not built. To enable t
 This will build the ioda-converters code, plus add in the ioda-converter tests when running `ctest`.
 
 ### IODA Python API
-By default, the ioda Python API is not built. To enable this, use the following option:
+The ioda Python API utilizes the pybind11 library which easily binds python to C++.
+By default, the ioda Python API is built when the pybind11 package is found.
+If the pybind11 package is not found, then the default is to not build the ioda Python API.
+
+The ioda Python API can be forced to build using the BUILD_PYTHON_BINDINGS ecbuild control variable.
 ```
     ecbuild -DBUILD_PYTHON_BINDINGS=ON /somewhere/to/store/source/code/ioda-bundle
 ```
-This will build the ioda Python API code, plus add in the associated tests. Note that this option requires python3 to be installed on your system, and access to the pybind11 libraray which is available in the containers or can be built and installed using jedi-stack.
+
+Once the construction of the ioda Python API is enabled, the associated tests are also enabled.
+Note to successfully build the ioda Python API requires python3 to be installed on your system,
+and requires access to the pybind11 library which is available in the containers or can be built
+and installed using jedi-stack..
+
+In order to utilize the ioda Python API, use one of the following two options:
+
+**Option 1:** Set the `$PYTHONPATH` environmental variable to include the path to the 
+`ioda-bundle/build/lib/python3.9/pyioda` directory. You may want to add this to `~/.bash_profile`.
+
+Note: The PyCharm IDE will not resolve the ioda Python API using **Option 1**. If you are using the 
+PyCharm IDE to develop code using the ioda Python API, please use **Option 2**. 
+
+For example, 
+
+```
+export PYTHONPATH=$PYTHONPATH:/Users/<username>/ioda-bundle/build/lib/python3.9/pyioda
+```
+
+**Option 2:** Create a file called `ioda.pth`, populate its contents with the full path to the 
+`ioda-bundle/build/lib/python3.9/pyioda` directory, and copy this file into the `lib/python3.9/site-packages` 
+directory of the local python installation or a Python3 virtual environment ("venv"). 
+
+For example, 
+
+_ioda.pth_
+    
+```
+/Users/<username>/ioda-bundle/build/lib/python3.9/pyioda
+```
+
+```
+cp /Users/<username>/ioda.pth <venv_path>/lib/python3.9/site-packages
+```
 
 ### Doxygen html documentation
 By default, the ioda Doxygen documentation is not built. To enable the build of the html version of the Doxygen documentation, use the follwing option:
