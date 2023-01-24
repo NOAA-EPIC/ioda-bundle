@@ -36,8 +36,8 @@ ecbuild_bundle( PROJECT atlas GIT "https://github.com/ecmwf/atlas.git" TAG 0.27.
 ecbuild_bundle( PROJECT odc GIT "https://github.com/ecmwf/odc.git" TAG 1.4.4 )
 
 # Core JEDI repositories
-ecbuild_bundle( PROJECT oops GIT "https://github.com/JCSDA/oops.git" TAG e8cbd61084a4574906eafc0e9c5450da674f185a )
-ecbuild_bundle( PROJECT ioda GIT "https://github.com/JCSDA/ioda.git" BRANCH develop UPDATE )
+ecbuild_bundle( PROJECT oops GIT "https://github.com/JCSDA/oops.git" TAG 914185bb86c3f91a07869977ffd4a96226a70f19 )
+ecbuild_bundle( PROJECT ioda GIT "https://github.com/JCSDA/ioda.git" TAG cb26e591d8ddc4fc3e2bbab7c2f55c297c96fc07 )
 
 
 # If IODA branch is being built set GIT_BRANCH_FUNC to IODA's current branch.
@@ -58,7 +58,7 @@ endif()
 # Build IODA converters
 option(BUILD_IODA_CONVERTERS "Build IODA Converters" OFF)
 if(BUILD_IODA_CONVERTERS)
-  ecbuild_bundle( PROJECT iodaconv GIT "https://github.com/JCSDA-internal/ioda-converters.git" BRANCH develop UPDATE )
+  ecbuild_bundle( PROJECT iodaconv GIT "https://github.com/JCSDA-internal/ioda-converters.git" BRANCH TAG 610ac65d72b0ba84f06b01b2dbb96f3a0df51dd3)
 endif()
 
 # Build Doxygen documentation
