@@ -20,7 +20,7 @@ set( ENABLE_MPI ON CACHE BOOL "Compile with MPI" )
 
 ecbuild_bundle_initialize()
 
-ecbuild_bundle( PROJECT jedicmake GIT "https://github.com/JCSDA-internal/jedi-cmake.git" BRANCH develop UPDATE )
+ecbuild_bundle( PROJECT jedicmake GIT "https://github.com/JCSDA/jedi-cmake.git" TAG 93402f2fa0fc2095b4e13a4caf828babb87c3e9d )
 include( jedicmake/cmake/Functions/git_functions.cmake )
 
 # ECMWF libs
@@ -36,8 +36,8 @@ ecbuild_bundle( PROJECT atlas GIT "https://github.com/ecmwf/atlas.git" TAG 0.27.
 ecbuild_bundle( PROJECT odc GIT "https://github.com/ecmwf/odc.git" TAG 1.4.4 )
 
 # Core JEDI repositories
-ecbuild_bundle( PROJECT oops GIT "https://github.com/JCSDA-internal/oops.git" BRANCH develop UPDATE )
-ecbuild_bundle( PROJECT ioda GIT "https://github.com/JCSDA-internal/ioda.git" BRANCH develop UPDATE )
+ecbuild_bundle( PROJECT oops GIT "https://github.com/JCSDA/oops.git" TAG e8cbd61084a4574906eafc0e9c5450da674f185a )
+ecbuild_bundle( PROJECT ioda GIT "https://github.com/JCSDA/ioda.git" BRANCH develop UPDATE )
 
 
 # If IODA branch is being built set GIT_BRANCH_FUNC to IODA's current branch.
